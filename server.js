@@ -1,7 +1,8 @@
-import http from "http";
+//import http from "http";
+import app from "./src/app.js"
 const PORT = 3000;
 
-const rotas ={
+/*const rotas ={
     "/": "Curso de Node.js",
     "/livros":"rota livros",
     "/autores":"rota autores"
@@ -12,8 +13,8 @@ const server= http.createServer((req,res)=>{
     
     res.end(rotas[req.url]);
 
-});
+});*/
 
-server.listen(PORT,()=>{
+app.listen(PORT,()=>{
     console.log("Servidor escutando !");
 })
