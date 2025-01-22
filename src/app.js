@@ -7,11 +7,11 @@ app.use(express.json());
 const livros = [
     {
         id:1,
-        título: "O Senhor dos Aneis"
+        titulo: "O Senhor dos Aneis"
     },
     {
         id:2,
-        título: "O Hobbit"
+        titulo: "O Hobbit"
     }
 ]
 
@@ -38,6 +38,13 @@ app.post("/livros",(req,res)=>{
     livros.push(req.body);
     res.status(201).send("Livro cadastrado");
 },)
+
+app.put("/livros/:id",(req,res)=>{
+    const index = buscaLivro(req.params.id);
+    livros[index].titulo = req.body.titulo;
+    res.status(200).json(livros);
+
+})
 
 
 export default app;
